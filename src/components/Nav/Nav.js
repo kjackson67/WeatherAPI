@@ -1,15 +1,7 @@
-import React from 'react';
+import React from "react";
 
-class Nav extends Component {
-    render() {
-      
-      return ( 
-        <div>
-         
-        </div>
-  
-      );
-    }
-  }
+const Nav = () => {
+  return <div>Nav</div>;
+};
 
 export default Nav;
