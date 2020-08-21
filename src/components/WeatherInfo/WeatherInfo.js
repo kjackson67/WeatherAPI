@@ -1,13 +1,9 @@
-import React from 'react';
+import React from "react";
 
-class WeatherInfo extends Component {
-    render() {
-      return (
-        <div>
-        </div>
-      );
-    }
+class WeatherInfo extends React.Component {
+  render() {
+    return <div>Weather Info</div>;
   }
-
+}
 
 export default WeatherInfo;
