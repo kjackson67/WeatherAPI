@@ -35,11 +35,11 @@ class App extends Component {
     );
   };
 
-  getWeatherByIP = async () => {
+  getWeatherByIP = async (event) => {
     // event.preventDefault();
     let response = await axios
       .get(
-        `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&lat=41.8781136&lon=-87.6297982`
+        `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&lat=${this.state.lat}&lon=${this.state.lon}`
       )
       .then((response) => {
         console.log(response.data.data);
@@ -47,16 +47,13 @@ class App extends Component {
           ipWeather: response.data.data,
         });
         console.log(this.state.ipWeather[0].city_name);
+        console.log(this.state.ipWeather[0].weather.icon);
       });
   };
-  render() {
-    let weatherByIp = this.state.ipWeather.map((item, index) => {
-      // console.log(image.url);
-      return item;
-    });
 
-    // let weatherByIp = this.state.ipWeather[0];
-    console.log(weatherByIp);
+  // let weatherByIp = this.state.ipWeather[0];
+  // console.log(this.weatherByIp);
+  render() {
     return (
       <div className="App">
         <header className="App-header">
@@ -68,7 +65,24 @@ class App extends Component {
           <div>
             Latitude: {this.state.lat}
             Longitude: {this.state.lon}
-            local weather: {weatherByIp.city_name}
+            <div>
+              {this.state.ipWeather.map((item, index) => {
+                return (
+                  <div>
+                    <div>
+                      Location: {item.city_name}, {item.state_code}
+                    </div>
+                    <div>{item.temp} °F</div>
+                    <div>Feels Like {item.app_temp} °F</div>
+                    <img src={`./icons/${item.weather.icon}.png`} />
+                    <div>{item.weather.description}</div>
+                    <div>Wind Speed: {item.wind_spd} mph </div>
+                    <div>Wind Direction: {item.wind_cdir} </div>
+                    <div>Wind Direction: {item.wind_dir}° </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
           <Switch>
             <Link to="/weatherinfo">Weather Details</Link>
