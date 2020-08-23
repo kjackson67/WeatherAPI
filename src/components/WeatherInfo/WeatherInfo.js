@@ -1,9 +1,16 @@
 import React from "react";
+import ForecastDetail from "../ForecastDetail/ForecastDetail";
 
-class WeatherInfo extends React.Component {
-  render() {
-    return <div>Weather Info</div>;
-  }
-}
+const WeatherInfo = (props) => {
+  return (
+    <div>
+      <div>Weather Info</div>
+      <ForecastDetail
+        ipForecast={props.ipForecast}
+        getForecastByIp={props.getForecastByIp}
+      />
+    </div>
+  );
+};
 
 export default WeatherInfo;
