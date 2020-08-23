@@ -1,0 +1,13 @@
+.forecastContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid green;
+}
+.dailyForecastContainer {
+  padding: 0px 10px 0px 10px;
+  border: 1px solid blue;
+}
+.icon {
+  height: 50px;
+}

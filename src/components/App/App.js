@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherInfo from "../WeatherInfo/WeatherInfo";
 import ForecastDetail from "../ForecastDetail/ForecastDetail";
 import Nav from "../Nav/Nav";
+import Home from "../Home/Home";
 import { Route, Switch, Link, Redirect } from "react-router-dom";
 
 class App extends Component {
@@ -13,17 +14,13 @@ class App extends Component {
       lat: "",
       lon: "",
       ipWeather: [],
+      ipForecast: [],
     };
   }
 
   componentDidMount = async () => {
     let response = await navigator.geolocation.getCurrentPosition(
       (position) => {
-        // let lat = position.coords.latitude;
-        // let lon = position.coords.longitude;
-        // console.log("this is position", position);
-        // console.log("this is your current LAT", lat);
-        // console.log("this is your current LONG", lon);
         this.setState({
           lat: position.coords.latitude,
           lon: position.coords.longitude,
@@ -31,6 +28,7 @@ class App extends Component {
         console.log(this.state.lat);
         console.log(this.state.lon);
         this.getWeatherByIP();
+        this.getForecastByIp();
       }
     );
   };
@@ -51,6 +49,21 @@ class App extends Component {
       });
   };
 
+  getForecastByIp = async (event) => {
+    // event.preventDefault();
+    let response = await axios
+      .get(
+        `https://api.weatherbit.io/v2.0/forecast/daily?key=367fe182e3524d8fa57fc76ede94121e&units=I&days=7&lat=${this.state.lat}&lon=${this.state.lon}`
+      )
+      .then((response) => {
+        console.log(response.data.data);
+        this.setState({
+          ipForecast: response.data.data,
+        });
+        console.log(this.state.ipForecast[0].high_temp);
+        console.log(this.state.ipForecast[0].weather.icon);
+      });
+  };
   // let weatherByIp = this.state.ipWeather[0];
   // console.log(this.weatherByIp);
   render() {
@@ -62,30 +75,14 @@ class App extends Component {
           </nav>
         </header>
         <main>
-          <div>
-            Latitude: {this.state.lat}
-            Longitude: {this.state.lon}
-            <div>
-              {this.state.ipWeather.map((item, index) => {
-                return (
-                  <div>
-                    <div>
-                      Location: {item.city_name}, {item.state_code}
-                    </div>
-                    <div>{item.temp} °F</div>
-                    <div>Feels Like {item.app_temp} °F</div>
-                    <img src={`./icons/${item.weather.icon}.png`} />
-                    <div>{item.weather.description}</div>
-                    <div>Wind Speed: {item.wind_spd} mph </div>
-                    <div>Wind Direction: {item.wind_cdir} </div>
-                    <div>Wind Direction: {item.wind_dir}° </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
           <Switch>
-            <Link to="/weatherinfo">Weather Details</Link>
+            <Route
+              exact
+              path="/"
+              render={(routerProps) => (
+                <Home {...this.state} {...routerProps} />
+              )}
+            />
 
             <Route
               path="/weatherinfo"
@@ -93,9 +90,12 @@ class App extends Component {
                 <WeatherInfo {...this.state} {...routerProps} />
               )}
             />
+            <ForecastDetail
+              ipForecast={this.state.ipForecast}
+              getForecastByIp={this.getForecastByIp}
+            />
           </Switch>
         </main>
-        {/* <ForecastDetail /> */}
       </div>
     );
   }
