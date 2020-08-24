@@ -13,31 +13,61 @@ class App extends Component {
     this.state = {
       lat: "",
       lon: "",
+      city: "",
+      state: "",
+      country: "",
+      zipCode: "",
       ipWeather: [],
       ipForecast: [],
     };
   }
 
   componentDidMount = async () => {
-    let response = await navigator.geolocation.getCurrentPosition(
-      (position) => {
+    let position = await axios
+      .get(`https://ipapi.co/json/`)
+      .then((position) => {
+        console.log(position.data);
         this.setState({
-          lat: position.coords.latitude,
-          lon: position.coords.longitude,
+          lat: position.data.latitude,
+          lon: position.data.longitude,
+          city: position.data.city,
+          state: position.data.region_code,
+          country: position.data.country_code,
+          zipCode: position.data.postal,
         });
         console.log(this.state.lat);
         console.log(this.state.lon);
+        console.log(this.state.city);
+        console.log(this.state.state);
+        console.log(this.state.country);
+        console.log(this.state.zipCode);
         this.getWeatherByIP();
         this.getForecastByIp();
-      }
-    );
+      });
   };
 
+  // componentDidMount = async () => {
+  //   let response = await navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       this.setState({
+  //         lat: position.coords.latitude,
+  //         lon: position.coords.longitude,
+  //       });
+  //       console.log(this.state.lat);
+  //       console.log(this.state.lon);
+  //       this.getWeatherByIP();
+  //       this.getForecastByIp();
+  //     }
+  //   );
+  // };
   getWeatherByIP = async (event) => {
     // event.preventDefault();
     let response = await axios
+      // .get(
+      //   `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&lat=${this.state.lat}&lon=${this.state.lon}`
+      // )
       .get(
-        `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&lat=${this.state.lat}&lon=${this.state.lon}`
+        `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&&city=${this.state.city}&state=${this.state.state}&country=${this.state.country}&postal_code=${this.state.zipCode}&lat=${this.state.lat}&lon=${this.state.lon}`
       )
       .then((response) => {
         console.log(response.data.data);
@@ -56,7 +86,7 @@ class App extends Component {
         `https://api.weatherbit.io/v2.0/forecast/daily?key=367fe182e3524d8fa57fc76ede94121e&units=I&days=7&lat=${this.state.lat}&lon=${this.state.lon}`
       )
       .then((response) => {
-        console.log(response.data.data);
+        console.log(response.data);
         this.setState({
           ipForecast: response.data.data,
         });
