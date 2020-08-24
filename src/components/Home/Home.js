@@ -15,7 +15,7 @@ const Home = (props) => {
             return (
               <div>
                 <h2 className="currentconditionsLocation">
-                  {item.city_name}, {item.state_code}
+                  {item.city_name}, {item.state_code} 
                 </h2>
                 <div className="conditionsDetailsWrapper">
                   <div className="conditionsIconContainer">
@@ -47,7 +47,7 @@ const Home = (props) => {
           })}
         </div>
       </div>
-      <Button className="button" size="lg" variant="primary">
+      <Button className="button" size="lg" variant="primary" >
         <Link to="/weatherinfo">Weather Details</Link>
       </Button>
     </div>

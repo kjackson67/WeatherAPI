@@ -15,6 +15,7 @@ class App extends Component {
       lon: "",
       ipWeather: [],
       ipForecast: [],
+      
     };
   }
 
