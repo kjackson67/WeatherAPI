@@ -97,14 +97,30 @@ class App extends Component {
   };
   // let weatherByIp = this.state.ipWeather[0];
   // console.log(this.weatherByIp);
+
+handleSearch = (event, city, state, country) =>{
+     event.preventDefault();
+     this.setState({
+       city: city,
+       state: state,
+       country: country,
+     })
+     this.getForecastByIp()
+     this.getWeatherByIP()
+ console.log("this is city state country", this.state)
+}
+
+
   render() {
     return (
+     
       <div className="App">
         <header className="App-header">
           <nav>
-            <Nav />
+            <Nav handleSearch={this.handleSearch} />
           </nav>
         </header>
+
         <main>
           <Switch>
             <Route
