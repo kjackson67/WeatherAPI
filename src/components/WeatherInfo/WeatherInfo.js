@@ -11,6 +11,7 @@ const WeatherInfo = (props) => {
         ipForecast={props.ipForecast}
         getForecastByIp={props.getForecastByIp}
       />
+      
     </div>
   );
 };

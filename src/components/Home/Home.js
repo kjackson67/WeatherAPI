@@ -8,14 +8,14 @@ const Home = (props) => {
     <div className="currentConditionsContainer">
       <h1 className="currentConditions">Current Conditions</h1>
       <div>
-        {/* Latitude: {props.lat}
-        Longitude: {props.lon} */}
+        Latitude: {props.lat}
+        Longitude: {props.lon}
         <div>
           {props.ipWeather.map((item, index) => {
             return (
               <div key={index} >
                 <h2 className="currentconditionsLocation">
-                  {item.city_name}, {item.state_code}
+                  {item.city_name}, {item.state_code} 
                 </h2>
                 <div className="conditionsDetailsWrapper">
                   <div className="conditionsIconContainer">
@@ -28,15 +28,15 @@ const Home = (props) => {
                   </div>
                   <div className="tempContainer">
                     <div className="currentTempWrapper">
-                      <div className="currentTemp">{item.temp}</div>
+                      <div className="currentTemp">{Math.round(item.temp)}</div>
                       <div className="currentTempUnits"> °F</div>
                     </div>
                     <div className="feelsLike">
-                      <span>Feels Like</span> {item.app_temp}
+                      <span>Feels Like</span> {Math.round(item.app_temp)}
                     </div>
                   </div>
                   <div className="windConditionsWrapper">
-                    <div>Wind Speed: {item.wind_spd} mph </div>
+                    <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
                     <div>Wind Direction: {item.wind_cdir} </div>
                     <div>Wind Direction: {item.wind_dir}° </div>
                   </div>
@@ -47,7 +47,7 @@ const Home = (props) => {
           })}
         </div>
       </div>
-      <Button className="button" size="lg" variant="primary">
+      <Button className="button" size="lg" variant="primary" >
         <Link to="/weatherinfo">Weather Details</Link>
       </Button>
     </div>
