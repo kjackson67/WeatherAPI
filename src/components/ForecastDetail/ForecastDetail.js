@@ -1,6 +1,9 @@
 import React from "react";
 import "./ForecastDetail.css";
 
+
+
+
 function ForecastDetail(props) {
   const forecastDetails = props.ipForecast.map((item, index) => {
     return (

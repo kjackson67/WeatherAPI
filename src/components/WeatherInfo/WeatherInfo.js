@@ -1,11 +1,14 @@
 import React from "react";
 import "./WeatherInfo.css";
 import ForecastDetail from "../ForecastDetail/ForecastDetail";
+import { Link } from "react-router-dom";
 
 const WeatherInfo = (props) => {
   return (
     <div>
-    <div>Weather Info</div>
+    <div>Weather Details</div> 
+    <br></br>
+    <button onClick={() => props.history.goBack()}>Home</button>
       <h1 className="currentConditions">Current Conditions</h1>
       <div>
         Latitude: {props.lat}
