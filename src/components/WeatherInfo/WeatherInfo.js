@@ -1,7 +1,7 @@
 import React from "react";
 import "./WeatherInfo.css";
 import ForecastDetail from "../ForecastDetail/ForecastDetail";
-import { Link } from "react-router-dom";
+
 
 const WeatherInfo = (props) => {
   return (
@@ -28,6 +28,7 @@ const WeatherInfo = (props) => {
                       alt="icon"
                     />
                     <div>{item.weather.description}</div>
+                    <br></br>
                   </div>
                   <div className="tempContainer">
                     <div className="currentTempWrapper">

@@ -2,31 +2,29 @@ import React, { Component } from "react";
 import './Nav.css'
 
 class Nav extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       city: "",
       state: "",
       country: "",
     };
   }
+  
+handleSubmit = (event) =>{
+  event.preventDefault()
+  this.props.forecastIP()
+  this.props.weatherIP()
+}
 
-  handleChange = (event) =>{
-    this.setState({
-      [event.target.name]: event.target.value,
-    }) 
-    
-    
-    console.log(this.state)
-  }
   render(){
     return (
-      <form onSubmit={(event)=>this.props.handleSearch(event, this.state.city, this.state.state, this.state.country)} >
-        <input onChange={this.handleChange} value={this.state.city} type="text" name="city" placeholder="City..."/>
-        <input onChange={this.handleChange} value={this.state.state}type="text" name="state" placeholder="State..."/>
-        <input onChange={this.handleChange} value={this.state.country}type="text" name="country" placeholder="Country..."/>
+      <form onSubmit={this.handleSubmit} >
+        <input onChange={this.props.handleChange} value={this.props.city} type="text" name="city" placeholder="City..."/>
+        <input onChange={this.props.handleChange} value={this.props.state} type="text" name="state" placeholder="State..."/>
+        <input onChange={this.props.handleChange} value={this.props.country} type="text" name="country" placeholder="Country..."/>
 
-        <button>Get Weather</button>
+        <button >Get Weather</button>
       </form>
       
     ) 
