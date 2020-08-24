@@ -4,7 +4,7 @@ import "./ForecastDetail.css";
 function ForecastDetail(props) {
   const forecastDetails = props.ipForecast.map((item, index) => {
     return (
-      <div className="forecastWrapper">
+      <div className="forecastWrapper" key={index}>
         <div className="dailyForecastContainer">
           <div className="date">
             <div>{item.valid_date}</div>
