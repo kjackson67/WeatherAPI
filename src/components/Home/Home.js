@@ -13,7 +13,7 @@ const Home = (props) => {
         <div>
           {props.ipWeather.map((item, index) => {
             return (
-              <div>
+              <div key={index} >
                 <h2 className="currentconditionsLocation">
                   {item.city_name}, {item.state_code}
                 </h2>
