@@ -18,9 +18,8 @@ function WeatherInfo(props) {
                 </h2>
                 <div className="tempContainer">
                   <div className="currentTempWrapper">
-                    <div className="curentTemp">{Math.round(item.temp)}</div>
+                    <div className="currentTemp">{Math.round(item.temp)}</div>
                     <div className="currentTempUnits"> °F</div>
-                  </div>
                   <div className="feelsLike">
                     <span>Feels Like</span> {Math.round(item.app_temp)}
                   </div>
@@ -33,6 +32,9 @@ function WeatherInfo(props) {
                       alt="icon"
                     />
                     <div>{item.weather.description}</div>
+                  </div>
+                </div>
+                </div>
                     <div className="windConditionsWrapper">
                       <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
                       <div>Wind Direction: {item.wind_cdir} </div>
@@ -51,8 +53,6 @@ function WeatherInfo(props) {
                         <div>Snow Depth: {item.snow} inches</div>
                       </div>
                     </div>
-                  </div>
-                </div>
               </div>
             );
           })}

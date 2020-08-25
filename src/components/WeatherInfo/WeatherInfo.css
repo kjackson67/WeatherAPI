@@ -1,8 +1,36 @@
 .button {
-    height: 30px;
-    background-color:  white;
-    box-shadow: 5px 3px #888888;
-}
-/* .currentCond {
   height: 30px;
-} */
+  background-color: white;
+  box-shadow: 5px 3px #888888;
+}
+.currentConditionsContainer {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  border: 1px solid purple;
+}
+.tempContainer {
+  display: flex;
+  flex-flow: column wrap;
+  border: 1px solid red;
+}
+.currentTempWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+  border-radius: 150%;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+}
+.currentTemp {
+  display: inline-flex;
+  font-size: 90px;
+  text-decoration-style: double;
+}
+.feelsLike {
+  display: inline;
+  font-size: 18px;
+  text-transform: uppercase;
+  align-items: center;
+}
