@@ -2,10 +2,13 @@ import React from "react";
 import "./WeatherInfo.css";
 import ForecastDetail from "../ForecastDetail/ForecastDetail";
 
+
 const WeatherInfo = (props) => {
   return (
     <div>
-    <div>Weather Info</div>
+    <div>Weather Details</div> 
+    <br></br>
+    <button onClick={() => props.history.goBack()}>Home</button>
       <h1 className="currentConditions">Current Conditions</h1>
       <div>
         Latitude: {props.lat}
@@ -25,6 +28,7 @@ const WeatherInfo = (props) => {
                       alt="icon"
                     />
                     <div>{item.weather.description}</div>
+                    <br></br>
                   </div>
                   <div className="tempContainer">
                     <div className="currentTempWrapper">
