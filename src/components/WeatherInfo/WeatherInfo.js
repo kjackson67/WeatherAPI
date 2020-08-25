@@ -11,18 +11,21 @@ function WeatherInfo(props) {
         <div>
           {props.ipWeather.map((item, index) => {
             return (
-             <div key={index}>
+             <div key={index}> 
                <button onClick={() => props.history.goBack()}>Home</button> 
                <h2 className="currentconditionsLocation">
                   {item.city_name}, {item.state_code} 
                 </h2>
-                <div className="tempContainer">
+                <div className="conditionUpdate">
+                 <div className="tempContainer">
                   <div className="currentTempWrapper">
                     <div className="currentTemp">{Math.round(item.temp)}</div>
                     <div className="currentTempUnits"> °F</div>
+                    </div>
                   <div className="feelsLike">
                     <span>Feels Like</span> {Math.round(item.app_temp)}
                   </div>
+                
                 </div>
                 <div className="conditionsDataWrapper">
                   <div className="conditionsDataContainer">
@@ -33,7 +36,6 @@ function WeatherInfo(props) {
                     />
                     <div>{item.weather.description}</div>
                   </div>
-                </div>
                 </div>
                     <div className="windConditionsWrapper">
                       <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
@@ -53,6 +55,11 @@ function WeatherInfo(props) {
                         <div>Snow Depth: {item.snow} inches</div>
                       </div>
                     </div>
+                  <div className="Astronomy">
+                    <div>Sun Rise: {item.sunrise} </div>
+                    <div>Sun Set: {item.sunset} </div>
+                  </div>
+                  </div>
               </div>
             );
           })}
