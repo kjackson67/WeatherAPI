@@ -34,6 +34,7 @@ class App extends Component {
   };
 
   getWeatherByIP = async (event) => {
+<<<<<<< HEAD
     // event.preventDefault();
     let response = await axios
       .get(
@@ -41,15 +42,16 @@ class App extends Component {
       )
       .then((response) => {
         console.log(response.data.data);
+=======
+    const response = await axios.get(`https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&&city=${this.state.city}&state=${this.state.state}&country=${this.state.country}&postal_code=${this.state.zipCode}&lat=${this.state.lat}&lon=${this.state.lon}`)
+>>>>>>> 3eebb03a425d22ea389619f2d19da4fccccd69bf
         this.setState({
           ipWeather: response.data.data,
         });
-        console.log(this.state.ipWeather[0].city_name);
-        console.log(this.state.ipWeather[0].weather.icon);
-      });
   };
 
   getForecastByIp = async (event) => {
+<<<<<<< HEAD
     // event.preventDefault();
     let response = await axios
       .get(
@@ -57,21 +59,41 @@ class App extends Component {
       )
       .then((response) => {
         console.log(response.data.data);
+=======
+    const response = await  axios.get(`https://api.weatherbit.io/v2.0/forecast/daily?key=367fe182e3524d8fa57fc76ede94121e&units=I&days=7&&city=${this.state.city}&state=${this.state.state}&country=${this.state.country}&postal_code=${this.state.zipCode}&lat=${this.state.lat}&lon=${this.state.lon}`)
+>>>>>>> 3eebb03a425d22ea389619f2d19da4fccccd69bf
         this.setState({
           ipForecast: response.data.data,
         });
-        console.log(this.state.ipForecast[0].high_temp);
-        console.log(this.state.ipForecast[0].weather.icon);
-      });
   };
+<<<<<<< HEAD
   // let weatherByIp = this.state.ipWeather[0];
   // console.log(this.weatherByIp);
+=======
+
+handleChange = (event) =>{
+  this.setState({
+    [event.target.name]: event.target.value,
+  }) 
+  console.log(this.state)
+}
+
+>>>>>>> 3eebb03a425d22ea389619f2d19da4fccccd69bf
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <nav>
+<<<<<<< HEAD
             <Nav />
+=======
+            <Nav handleChange={this.handleChange} 
+            forecastIP={this.getForecastByIp} 
+            weatherIP={this.getWeatherByIP}
+            city={this.state.city}
+            state={this.state.state}
+            country={this.state.country}/>
+>>>>>>> 3eebb03a425d22ea389619f2d19da4fccccd69bf
           </nav>
         </header>
         <main>
