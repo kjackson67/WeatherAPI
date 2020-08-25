@@ -84,7 +84,7 @@ class Home extends Component {
             <div>
               <div key={index}>
                 <h2 className="currentconditionsLocation">
-                  {item.city_name}, {item.state_code}
+                  {item.city_name}, {item.state_code} 
                 </h2>
                 <div className="conditionsDetailsWrapper">
                   <div className="conditionsIconContainer">
