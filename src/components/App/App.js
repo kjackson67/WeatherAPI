@@ -13,6 +13,10 @@ class App extends Component {
     this.state = {
       lat: "",
       lon: "",
+      city: "",
+      state: "",
+      country: "",
+      zipCode: "",
       ipWeather: [],
       ipForecast: [],
     };
