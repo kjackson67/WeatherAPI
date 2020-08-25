@@ -11,3 +11,18 @@
 .icon {
   height: 50px;
 }
+.date {
+  font-weight: bold;
+}
+.conditionsIcon {
+  padding-bottom: 5px;
+}
+.pop {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.popicon {
+  height: 15px;
+  padding-right: 10px;
+}
