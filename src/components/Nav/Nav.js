@@ -9,6 +9,7 @@ class Nav extends Component {
       state: "",
       country: "",
     };
+
   }
   
 handleSubmit = (event) =>{
@@ -23,14 +24,11 @@ handleSubmit = (event) =>{
         <input onChange={this.props.handleChange} value={this.props.city} type="text" name="city" placeholder="City..."/>
         <input onChange={this.props.handleChange} value={this.props.state} type="text" name="state" placeholder="State..."/>
         <input onChange={this.props.handleChange} value={this.props.country} type="text" name="country" placeholder="Country..."/>
-
         <button >Get Weather</button>
       </form>
       
     ) 
   }
-  
-
 };
 
 export default Nav;
