@@ -3,6 +3,7 @@ import './WeatherInfo.css'
 import ForecastDetail from '../ForecastDetail/ForecastDetail'
 
 function WeatherInfo(props) {
+  // const weatherUpdate = props.ipWeather.map((item, index) => {
   return (
     <div className="currentConditionsWrapper">
       <div className="currentConditionsContainer">
@@ -11,18 +12,37 @@ function WeatherInfo(props) {
           {props.ipWeather.map((item, index) => {
             return (
               <div key={index}>
-                <button onClick={() => props.history.goBack()}>Home</button>
+                <button
+                  className="homebutton"
+                  onClick={() => props.history.goBack()}
+                >
+                  Home
+                </button>
                 <h2 className="currentconditionsLocation">
                   {item.city_name}, {item.state_code}
                 </h2>
                 <div className="conditionUpdate">
                   <div className="tempContainer">
                     <div className="currentTempWrapper">
-                      <div className="currentTemp">{Math.round(item.temp)}</div>
-                      <div className="currentTempUnits"> °F</div>
-                    </div>
-                    <div className="feelsLike">
-                      <span>Feels Like</span> {Math.round(item.app_temp)}
+                      <div
+                        className={`${props.tempColor(item.temp)} currentTemp`}
+                      >
+                        {Math.round(item.temp)}
+                        <div
+                        className={`${props.tempColor(
+                          item.temp,
+                        )} currentTempUnits`}
+                      >
+                        {' '}
+                        °F
+                      </div>
+                      </div>
+                      
+                      <div className="feelsLike">
+                        <span>Feels Like</span> {Math.round(item.app_temp)}
+                      </div>
+                      
+
                     </div>
                   </div>
                   <div className="conditionsDataWrapper">
@@ -36,9 +56,18 @@ function WeatherInfo(props) {
                     </div>
                   </div>
                   <div className="windConditionsWrapper">
-                    <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
-                    <div>Wind Direction: {item.wind_cdir} </div>
-                    <div>Wind Direction: {item.wind_dir}° </div>
+                    <div className="compass">
+                      <div className="direction">
+                        <p>
+                          <span className="degrees">{item.wind_dir}°</span>
+                          <span className="cdir">{item.wind_cdir}</span>
+                          <span className="speed">{item.wind_spd} mph</span>
+                        </p>
+                      </div>
+                      <div
+                        className={`arrow ${props.windDir(item.wind_cdir)}`}
+                      ></div>
+                    </div>
                   </div>
                   <div className="additionalConditionsContainer">
                     <div className="additionalConditionsWrapper">
@@ -64,9 +93,11 @@ function WeatherInfo(props) {
       <ForecastDetail
         ipForecast={props.ipForecast}
         getForecastByIp={props.getForecastByIp}
+        windDir={props.windDir}
       />
     </div>
   )
+  // return <div className="weatherContainer">{weatherUpdate}</div>
 }
 
-export default WeatherInfo;
+export default WeatherInfo

@@ -27,21 +27,26 @@
   padding: 10px;
 }
 .tempContainer {
-  border: 5px solid orangered;
+  /* border: 5px solid red;
   padding: 10px;
-  background: #fff;
+  background: blank;
+  width: 210px;
+  height: 200px;
+  margin: 5px 2px;
+  border-radius: 50%;
+  position: relative; */
+}
+.currentTempWrapper {
+  border: 5px solid red;
+  padding: 10px;
+  background: blank;
   width: 210px;
   height: 200px;
   margin: 5px 2px;
   border-radius: 50%;
   position: relative;
-}
-.currentTempWrapper {
-  /* display: flex; */
-  /* border-radius: 0%; */
+  display: flex;
   padding: 5px;
-  /* border: 1px solid orange; */
-  justify-content: center;
 }
 .currentTemp {
   font-size: 90px;
