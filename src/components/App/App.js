@@ -57,10 +57,10 @@ class App extends Component {
     const response = await axios.get(
       `https://api.weatherbit.io/v2.0/current?key=367fe182e3524d8fa57fc76ede94121e&units=I&&city=${this.state.city}&state=${this.state.state}&country=${this.state.country}&postal_code=${this.state.zipCode}&lat=${this.state.lat}&lon=${this.state.lon}`
     );
-    console.log(response)
-    if (response.status!==200){
-      alert('There is an error. Please check your spelling.')
-    }else{
+    console.log(response);
+    if (response.status !== 200) {
+      alert("There is an error. Please check your spelling.");
+    } else {
       this.setState({
         ipWeather: response.data.data,
       });
@@ -71,11 +71,13 @@ class App extends Component {
     const response = await axios.get(
       `https://api.weatherbit.io/v2.0/forecast/daily?key=367fe182e3524d8fa57fc76ede94121e&units=I&days=7&&city=${this.state.city}&state=${this.state.state}&country=${this.state.country}&postal_code=${this.state.zipCode}&lat=${this.state.lat}&lon=${this.state.lon}`
     );
-    this.setState({
-      ipForecast: response.data.data,
-    });
+    if (response.status !== 200) {
+    } else {
+      this.setState({
+        ipForecast: response.data.data,
+      });
+    }
   };
-
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value,

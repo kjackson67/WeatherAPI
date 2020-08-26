@@ -78,7 +78,7 @@ class Home extends Component {
           onClick={() => {
             this.props.history.push("/weatherinfo");
           }}
-          className="button"
+          //   className="button"
           size="lg"
           variant="primary"
         >
