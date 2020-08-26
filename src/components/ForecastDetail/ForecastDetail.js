@@ -62,7 +62,7 @@ class ForecastDetail extends Component {
               </div>
               <div>{item.precip.toFixed(2)}"</div>
             </div>
-            <div> {(item.pres / 33.864).toFixed(2)} in</div>
+            <div> {(item.slp / 33.864).toFixed(2)} in</div>
           </div>
         </div>
       );
