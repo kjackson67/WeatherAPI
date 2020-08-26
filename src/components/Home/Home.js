@@ -74,7 +74,7 @@ class Home extends Component {
     return (
       <div>
         {currentConditions}
-        <Button
+        <button
           onClick={() => {
             this.props.history.push("/weatherinfo");
           }}
@@ -84,7 +84,7 @@ class Home extends Component {
         >
           Weather Details
           {/* <Link to="/weatherinfo">Weather Details</Link> */}
-        </Button>
+        </button>
       </div>
     );
   }

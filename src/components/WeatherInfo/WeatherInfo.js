@@ -97,5 +97,10 @@ function WeatherInfo(props) {
   );
   // return <div className="weatherContainer">{weatherUpdate}</div>
 }
+// return (
+//   <div>
+// <Button onClick={()=>props.history.goBack()} className="homebutton" size="lg" variant="primary"> Home</Button>
+// </div>
+// );
 
 export default WeatherInfo;
