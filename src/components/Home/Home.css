@@ -41,8 +41,7 @@
 }
 .button {
   height: 30px;
-  background-color: white;
-  box-shadow: 5px 3px #888888;
+  background-color: lightgray;
 }
 .t90plus {
   color: red;

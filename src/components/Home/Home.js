@@ -133,7 +133,7 @@ class Home extends Component {
     });
     return (
       <div>
-        {currentConditions}
+          {currentConditions}
         <Button className="button" size="lg" variant="primary">
           <Link to="/weatherinfo">Weather Details</Link>
         </Button>
