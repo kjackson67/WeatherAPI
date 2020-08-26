@@ -1,4 +1,8 @@
-
+.button {
+  height: 30px;
+  background-color: white;
+  box-shadow: 5px 3px #888888;
+}
 .conditionUpdate {
   border: solid black;
   display: flex;
@@ -23,32 +27,37 @@
   padding: 10px;
 }
 .tempContainer {
-  /* display: flex; */
-  /* flex-flow: column wrap; */
-  /* border: 1px solid red; */
-  padding: 10px
+  /* border: 5px solid red;
+  padding: 10px;
+  background: blank;
+  width: 210px;
+  height: 200px;
+  margin: 5px 2px;
+  border-radius: 50%;
+  position: relative; */
 }
 .currentTempWrapper {
-  display: flex;
-  /* justify-content: center; */
-  margin: 15px 0;
-  /* border-radius: 0%; */
-  /* width: 200px; */
+  border: 5px solid red;
+  padding: 10px;
+  background: blank;
+  width: 210px;
   height: 200px;
+  margin: 5px 2px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
   padding: 5px;
-  /* border: 1px solid orange; */
-  align-items: center;
 }
 .currentTemp {
-  /* display: inline-flex; */
   font-size: 90px;
   text-decoration-style: double;
+  padding: 5px;
 }
 .feelsLike {
   /* display: inline; */
   font-size: 18px;
   text-transform: uppercase;
-  /* align-items: center; */
+  padding: 5px;
 }
 .currentTempUnits {
   font-size: 30px;

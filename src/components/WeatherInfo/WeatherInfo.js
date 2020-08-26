@@ -1,7 +1,6 @@
-import React from "react";
-import "./WeatherInfo.css";
-import ForecastDetail from "../ForecastDetail/ForecastDetail";
-import Button from "react-bootstrap/Button";
+import React from 'react'
+import './WeatherInfo.css'
+import ForecastDetail from '../ForecastDetail/ForecastDetail'
 
 function WeatherInfo(props) {
   // const weatherUpdate = props.ipWeather.map((item, index) => {
@@ -29,18 +28,21 @@ function WeatherInfo(props) {
                         className={`${props.tempColor(item.temp)} currentTemp`}
                       >
                         {Math.round(item.temp)}
-                      </div>
-                      <div
+                        <div
                         className={`${props.tempColor(
-                          item.temp
+                          item.temp,
                         )} currentTempUnits`}
                       >
-                        {" "}
+                        {' '}
                         °F
                       </div>
-                    </div>
-                    <div className="feelsLike">
-                      <span>Feels Like</span> {Math.round(item.app_temp)}
+                      </div>
+                      
+                      <div className="feelsLike">
+                        <span>Feels Like</span> {Math.round(item.app_temp)}
+                      </div>
+                      
+
                     </div>
                   </div>
                   <div className="conditionsDataWrapper">
@@ -84,7 +86,7 @@ function WeatherInfo(props) {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -94,8 +96,8 @@ function WeatherInfo(props) {
         windDir={props.windDir}
       />
     </div>
-  );
-  
+  )
+  // return <div className="weatherContainer">{weatherUpdate}</div>
 }
 // return (
 //   <div>
@@ -103,4 +105,4 @@ function WeatherInfo(props) {
 // </div>
 // );
 
-export default WeatherInfo;
+export default WeatherInfo

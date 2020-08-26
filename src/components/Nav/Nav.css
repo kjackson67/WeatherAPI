@@ -1,4 +1,13 @@
 .getweather {
-   background-color:green;
-   color: white;
+  background-color: green;
+  color: white;
+}
+.inputCity {
+  font-size: 15px;
+}
+.inputState {
+  font-size: 15px;
+}
+.inputCountry {
+  font-size: 15px;
 }
