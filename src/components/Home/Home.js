@@ -78,6 +78,7 @@ class Home extends Component {
         return direction;
       };
       return (
+        
         <div className="currentConditionsContainer">
           <h1 className="currentConditions">Current Conditions</h1>
           <div>
@@ -127,6 +128,7 @@ class Home extends Component {
             </div>
           </div>
         </div>
+        
       );
     });
     return (

@@ -6,6 +6,7 @@
 .currentTempWrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
   /* border: 1px solid blue; */
 }
 .currentTemp {
@@ -18,6 +19,7 @@
   font-size: 30px;
   padding-bottom: 35px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
 }
 .conditionsIconContainer {
   padding-right: 20px;
@@ -201,4 +203,9 @@
 }
 .compass .arrow.nnw {
   transform: rotate(-24.5deg);
+}
+body {
+  background-image: url('/mountain.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
