@@ -11,19 +11,26 @@ function WeatherInfo(props) {
         <div>
           {props.ipWeather.map((item, index) => {
             return (
+<<<<<<< HEAD
              <div key={index}>
                <button className="button" onClick={() => props.history.goBack()}>Home</button> 
+=======
+             <div key={index}> 
+               <button onClick={() => props.history.goBack()}>Home</button> 
+>>>>>>> fa3c4a37f72d6bbb597e91f2851586a66ca7ff4b
                <h2 className="currentconditionsLocation">
                   {item.city_name}, {item.state_code} 
                 </h2>
-                <div className="tempContainer">
+                <div className="conditionUpdate">
+                 <div className="tempContainer">
                   <div className="currentTempWrapper">
-                    <div className="curentTemp">{Math.round(item.temp)}</div>
+                    <div className="currentTemp">{Math.round(item.temp)}</div>
                     <div className="currentTempUnits"> °F</div>
-                  </div>
+                    </div>
                   <div className="feelsLike">
                     <span>Feels Like</span> {Math.round(item.app_temp)}
                   </div>
+                
                 </div>
                 <div className="conditionsDataWrapper">
                   <div className="conditionsDataContainer">
@@ -33,6 +40,8 @@ function WeatherInfo(props) {
                       alt="icon"
                     />
                     <div>{item.weather.description}</div>
+                  </div>
+                </div>
                     <div className="windConditionsWrapper">
                       <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
                       <div>Wind Direction: {item.wind_cdir} </div>
@@ -51,13 +60,20 @@ function WeatherInfo(props) {
                         <div>Snow Depth: {item.snow} inches</div>
                       </div>
                     </div>
+                  <div className="Astronomy">
+                    <div>Sun Rise: {item.sunrise} </div>
+                    <div>Sun Set: {item.sunset} </div>
                   </div>
+                  </div>
+<<<<<<< HEAD
                   <div className="windConditionsWrapper">
                     <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
                     <div>Wind Direction: {item.wind_cdir} </div>
                     <div>Wind Direction: {item.wind_dir}° </div>
                   </div>
                 </div>
+=======
+>>>>>>> fa3c4a37f72d6bbb597e91f2851586a66ca7ff4b
               </div>
             );
           })}
