@@ -14,7 +14,6 @@ class ForecastDetail extends Component {
         let date = new Date(today).getUTCDate();
         let month = new Date(today).getMonth() + 1;
         let datevalue = ` ${month}/${date}`;
-        console.log("this is today", datevalue);
         return datevalue;
       };
       return (
@@ -37,10 +36,17 @@ class ForecastDetail extends Component {
               />
               <div className="skyConditions">{item.weather.description}</div>
             </div>
-            <div className="windInformation">
-              <div>Wind Speed: {Math.round(item.wind_spd)} mph </div>
-              <div>Wind Direction: {item.wind_cdir} </div>
-              <div>Wind Direction: {item.wind_dir}° </div>
+            <div className="fcompass">
+              <div className="direction">
+                <p>
+                  <span className="degrees">{item.wind_dir}°</span>
+                  <span className="cdir">{item.wind_cdir}</span>
+                  <span className="speed">{item.wind_spd} mph</span>
+                </p>
+              </div>
+              <div
+                className={`arrow ${this.props.windDir(item.wind_cdir)}`}
+              ></div>
             </div>
             <div className="pop">
               <div>
