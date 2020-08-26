@@ -8,13 +8,14 @@
   /* padding: 0px 5px 0px 5px; */
   margin: 1px;
   width: 200px;
-  height: 250px;
+  height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: whitesmoke;
-  border: 1px solid rgb(154, 154, 167);
+  background-color: rgb(175, 175, 175, 0.7);
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 20px;
 }
 
 .icon {
