@@ -215,3 +215,8 @@
 .compass .arrow.nnw {
   transform: rotate(-24.5deg);
 }
+body {
+  background-image: url("/mountain.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}

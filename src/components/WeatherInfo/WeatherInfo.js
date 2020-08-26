@@ -12,7 +12,12 @@ function WeatherInfo(props) {
           {props.ipWeather.map((item, index) => {
             return (
               <div key={index}>
-                <button onClick={() => props.history.goBack()}>Home</button>
+                <button
+                  className="button"
+                  onClick={() => props.history.goBack()}
+                >
+                  Home
+                </button>
                 <h2 className="currentconditionsLocation">
                   {item.city_name}, {item.state_code}
                 </h2>
