@@ -59,7 +59,7 @@ class App extends Component {
     );
     console.log(response)
     if (response.status!==200){
-      alert('There is an error. Please check your spelling.')
+      alert('There is an error. Please check your spelling. The format for input could also be city and country.')
     }else{
       this.setState({
         ipWeather: response.data.data,

@@ -1,6 +1,7 @@
 import React from "react";
 import "./WeatherInfo.css";
 import ForecastDetail from "../ForecastDetail/ForecastDetail";
+import Button from "react-bootstrap/Button";
 
 function WeatherInfo(props) {
   // const weatherUpdate = props.ipWeather.map((item, index) => {
@@ -94,7 +95,12 @@ function WeatherInfo(props) {
       />
     </div>
   );
-  // return <div className="weatherContainer">{weatherUpdate}</div>
+  
 }
+// return (
+//   <div>
+// <Button onClick={()=>props.history.goBack()} className="homebutton" size="lg" variant="primary"> Home</Button>
+// </div>
+// );
 
 export default WeatherInfo;

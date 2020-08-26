@@ -52,7 +52,14 @@
 }
 .homebutton {
   height: 30px;
-  background-color: lightgray;
+  background: transparent;
+  box-shadow: 0px 0px 0px transparent;
+  text-shadow: 0px 0px 0px transparent;
+  border-radius: 8px;
+}
+.homebutton .btn:hover {
+  background-color: black;
+  color: white;
 }
 .t90plus {
   color: red;

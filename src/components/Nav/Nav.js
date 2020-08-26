@@ -23,7 +23,7 @@ handleSubmit = (event) =>{
         <input onChange={this.props.handleChange} value={this.props.city} type="text" name="city" placeholder="City..."/>
         <input onChange={this.props.handleChange} value={this.props.state} type="text" name="state" placeholder="State..."/>
         <input onChange={this.props.handleChange} value={this.props.country} type="text" name="country" placeholder="Country..."/>
-       <strong>    <button className="getweather">Get Weather</button></strong>
+       <strong>    <button className="getweather"    >Get Weather</button></strong>
       </form>
       
     ) 
