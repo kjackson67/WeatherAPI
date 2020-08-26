@@ -21,21 +21,37 @@ class App extends Component {
       ipForecast: [],
     };
   }
-
   componentDidMount = async () => {
-    let response = await navigator.geolocation.getCurrentPosition(
-      (position) => {
+    let position = await axios
+      .get(`https://ipapi.co/json/`)
+      .then((position) => {
+        console.log(position.data);
         this.setState({
-          lat: position.coords.latitude,
-          lon: position.coords.longitude,
+          lat: position.data.latitude,
+          lon: position.data.longitude,
+          city: position.data.city,
+          state: position.data.region_code,
+          country: position.data.country_code,
+          zipCode: position.data.postal,
         });
-        console.log(this.state.lat);
-        console.log(this.state.lon);
         this.getWeatherByIP();
         this.getForecastByIp();
-      }
-    );
+      });
   };
+  // componentDidMount = async () => {
+  //   let response = await navigator.geolocation.getCurrentPosition(
+  //     (position) => {
+  //       this.setState({
+  //         lat: position.coords.latitude,
+  //         lon: position.coords.longitude,
+  //       });
+  //       console.log(this.state.lat);
+  //       console.log(this.state.lon);
+  //       this.getWeatherByIP();
+  //       this.getForecastByIp();
+  //     }
+  //   );
+  // };
 
   getWeatherByIP = async (event) => {
     const response = await axios.get(
@@ -61,7 +77,72 @@ class App extends Component {
     });
     console.log(this.state);
   };
-
+  tempColor = (temp) => {
+    let tempRange;
+    if (temp > 90) tempRange = "t90plus";
+    else if (temp >= 80) tempRange = "t8090";
+    else if (temp >= 70) tempRange = "t7080";
+    else if (temp >= 60) tempRange = "t6070";
+    else if (temp >= 50) tempRange = "t5060";
+    else if (temp >= 40) tempRange = "t4050";
+    else if (temp >= 30) tempRange = "t3040";
+    return tempRange;
+  };
+  windDir = (dir) => {
+    console.log(dir);
+    let direction = "";
+    switch (dir) {
+      case "NNE":
+        direction = "nne";
+        break;
+      case "NE":
+        direction = "ne";
+        break;
+      case "ENE":
+        direction = "ene";
+        break;
+      case "E":
+        direction = "e";
+        break;
+      case "ESE":
+        direction = "ese";
+        break;
+      case "SE":
+        direction = "se";
+        break;
+      case "SSE":
+        direction = "sse";
+        break;
+      case "S":
+        direction = "s";
+        break;
+      case "SSW":
+        direction = "ssw";
+        break;
+      case "SW":
+        direction = "sw";
+        break;
+      case "WSW":
+        direction = "wsw";
+        break;
+      case "W":
+        direction = "w";
+        break;
+      case "WNW":
+        direction = "wnw";
+        break;
+      case "NW":
+        direction = "nw";
+        break;
+      case "NNW":
+        direction = "nnw";
+        break;
+      case "N":
+        direction = "n";
+        break;
+    }
+    return direction;
+  };
   render() {
     return (
       <div className="App">
@@ -83,19 +164,30 @@ class App extends Component {
               exact
               path="/"
               render={(routerProps) => (
-                <Home {...this.state} {...routerProps} />
+                <Home
+                  {...this.state}
+                  {...routerProps}
+                  tempColor={this.tempColor}
+                  windDir={this.windDir}
+                />
               )}
             />
 
             <Route
               path="/weatherinfo"
               render={(routerProps) => (
-                <WeatherInfo {...this.state} {...routerProps} />
+                <WeatherInfo
+                  {...this.state}
+                  {...routerProps}
+                  tempColor={this.tempColor}
+                  windDir={this.windDir}
+                />
               )}
             />
             <ForecastDetail
               ipForecast={this.state.ipForecast}
               getForecastByIp={this.getForecastByIp}
+              windDir={this.windDir}
             />
           </Switch>
         </main>
