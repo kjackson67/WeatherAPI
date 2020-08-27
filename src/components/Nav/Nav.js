@@ -20,8 +20,10 @@ class Nav extends Component {
 
   render() {
     return (
+      <div className="navbar">
       <form onSubmit={this.handleSubmit}>
         <input
+       
           className="inputCity"
           onChange={this.props.handleChange}
           value={this.props.city}
@@ -54,6 +56,7 @@ class Nav extends Component {
           Get Weather
         </Button>
       </form>
+      </div>
     );
   }
 }
