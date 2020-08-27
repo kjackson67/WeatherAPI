@@ -1,6 +1,6 @@
-import React from "react";
-import "./WeatherInfo.css";
-import ForecastDetail from "../ForecastDetail/ForecastDetail";
+import React from 'react'
+import './WeatherInfo.css'
+import ForecastDetail from '../ForecastDetail/ForecastDetail'
 
 function WeatherInfo(props) {
   // const weatherUpdate = props.ipWeather.map((item, index) => {
@@ -30,10 +30,10 @@ function WeatherInfo(props) {
                         {Math.round(item.temp)}
                         <div
                           className={`${props.tempColor(
-                            item.temp
+                            item.temp,
                           )} currentTempUnits`}
                         >
-                          {" "}
+                          {' '}
                           °F
                         </div>
                       </div>
@@ -51,23 +51,22 @@ function WeatherInfo(props) {
                         alt="icon"
                       />
                       <div>{item.weather.description}</div>
-                    
-                  </div>
-                  {/* <div className="windConditionsWrapper"> */}
-                    <div className="compass">
-                      <div className="direction">
-                        <p>
-                          <span className="degrees">{item.wind_dir}°</span>
-                          <span className="cdir">{item.wind_cdir}</span>
-                          <span className="speed">{item.wind_spd} mph</span>
-                        </p>
+                    </div>
+                    <div className="windConditionsWrapper">
+                      <div className="compass">
+                        <div className="direction">
+                          <p>
+                            <span className="degrees">{item.wind_dir}°</span>
+                            <span className="cdir">{item.wind_cdir}</span>
+                            <span className="speed">{item.wind_spd} mph</span>
+                          </p>
+                        </div>
+                        <div
+                          className={`arrow ${props.windDir(item.wind_cdir)}`}
+                        ></div>
                       </div>
                     </div>
-                      <div
-                        className={`arrow ${props.windDir(item.wind_cdir)}`}
-                    ></div>
                   </div>
-                  {/* </div> */}
                   <div className="additionalConditionsContainer">
                     <div className="additionalConditionsWrapper">
                       <div>Pressure: {(item.slp / 33.864).toFixed(2)} in</div>
@@ -80,12 +79,14 @@ function WeatherInfo(props) {
                     </div>
                   </div>
                   <div className="Astronomy">
-                    <div>Sun Rise: {item.sunrise} </div>
-                    <div>Sun Set: {item.sunset} </div>
+                    {/* <div>Sun */}
+                      <div>Sun Rise: {item.sunrise} </div>
+                      <div>Sun Set: {item.sunset} </div>
+                    {/* </div>   */}
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       </div>
@@ -95,7 +96,7 @@ function WeatherInfo(props) {
         windDir={props.windDir}
       />
     </div>
-  );
+  )
   // return <div className="weatherContainer">{weatherUpdate}</div>
 }
 
