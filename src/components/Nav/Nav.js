@@ -20,7 +20,7 @@ class Nav extends Component {
 
   render() {
     return (
-      <form className="searchForm" onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
         <input
           className="inputCity"
           onChange={this.props.handleChange}
@@ -45,11 +45,22 @@ class Nav extends Component {
           name="country"
           placeholder="Country..."
         />
+<<<<<<< HEAD
         <strong>
           <button className="getweather" variant="secondary">
             Get Weather
           </button>
         </strong>
+=======
+
+        <Button
+          className="getweather"
+          onClick={this.handleSubmit}
+          variant="secondary"
+        >
+          Get Weather
+        </Button>
+>>>>>>> 9106b3903504e293488ccd1e3e4131ffcd152d90
       </form>
     );
   }

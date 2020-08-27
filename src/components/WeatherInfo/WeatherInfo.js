@@ -1,6 +1,6 @@
-import React from 'react'
-import './WeatherInfo.css'
-import ForecastDetail from '../ForecastDetail/ForecastDetail'
+import React from "react";
+import "./WeatherInfo.css";
+import ForecastDetail from "../ForecastDetail/ForecastDetail";
 
 function WeatherInfo(props) {
   // const weatherUpdate = props.ipWeather.map((item, index) => {
@@ -29,6 +29,7 @@ function WeatherInfo(props) {
                       >
                         {Math.round(item.temp)}
                         <div
+<<<<<<< HEAD
                         className={`${props.tempColor(
                           item.temp,
                         )} currentTempUnits`}
@@ -37,6 +38,17 @@ function WeatherInfo(props) {
                         °F
                       </div> 
                      </div> 
+=======
+                          className={`${props.tempColor(
+                            item.temp
+                          )} currentTempUnits`}
+                        >
+                          {" "}
+                          °F
+                        </div>
+                      </div>
+
+>>>>>>> 9106b3903504e293488ccd1e3e4131ffcd152d90
                       <div className="feelsLike">
                         <span>Feels Like</span> {Math.round(item.app_temp)}
                       </div>
@@ -69,7 +81,7 @@ function WeatherInfo(props) {
                   {/* </div> */}
                   <div className="additionalConditionsContainer">
                     <div className="additionalConditionsWrapper">
-                      <div>Pressure: {(item.pres / 33.864).toFixed(2)} in</div>
+                      <div>Pressure: {(item.slp / 33.864).toFixed(2)} in</div>
                       <div>Visibility: {item.vis} miles</div>
                       <div>Clouds: {item.clouds} %</div>
                       <div>Dew Point: {item.dewpt} °F</div>
@@ -84,7 +96,7 @@ function WeatherInfo(props) {
                   </div>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
@@ -94,8 +106,13 @@ function WeatherInfo(props) {
         windDir={props.windDir}
       />
     </div>
-  )
+  );
   // return <div className="weatherContainer">{weatherUpdate}</div>
 }
+// return (
+//   <div>
+// <Button onClick={()=>props.history.goBack()} className="homebutton" size="lg" variant="primary"> Home</Button>
+// </div>
+// );
 
-export default WeatherInfo
+export default WeatherInfo;
