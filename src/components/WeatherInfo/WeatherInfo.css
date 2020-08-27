@@ -86,8 +86,18 @@
 }
 .Astronomy {
   /* border: solid green; */
-  padding: 10px;
+  margin: 3px;
+  width: 175px;
+  height: 255px;
   display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: center;
+  line-height: 35px;
+  background-color: transparent;
+  padding: 9px;
+ 
+  
 }
 .t90plus {
   color: red;
