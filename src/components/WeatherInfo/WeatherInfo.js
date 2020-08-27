@@ -40,7 +40,6 @@ function WeatherInfo(props) {
                       <div className="feelsLike">
                         <span>Feels Like</span> {Math.round(item.app_temp)}
                       </div>
-                      
                     </div>
                   </div>
                   <div className="conditionsDataWrapper">
