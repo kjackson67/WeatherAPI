@@ -3,6 +3,8 @@
 
 // const { useReducer } = require("react")
 
+// The group used the approach of wireframe using Lucidchart utilizing a snapshot program to capture what we wanted our product to look like - both home page and details page (this can be found in /Planning/WeatherAPI Website blockframe - Home page.png and /Planning/WeatherAPI Website blockframe - details page.png).  A data flow diagram was also created detailing our Home Page(App.js) flowing into the Weather informations page(weatherinfo.js and forecastdetail.js) as well tying a navigation bar to both home and details pages.
+
 
 // ** USER STORIES **
 // As a user, I want to be able to go into the weather site UI.
@@ -15,8 +17,25 @@
 // As a user, I want to be able to see global location forecasts for traveling or just wanting to check other areas weather.
 // As a user, I want to be able to go back to the home page.
 
-// ** Technologies Utilized **
-// A front-end React application using dependencies pulled from Axios, REACT-Bootstrap, REACT-DOM, REACT-Router and REACT-Scripts.
+// ** TECHNOLOGIES UTILIZED **
+// A front-end React application using dependencies pulled from Axios,     REACT-Bootstrap, REACT-DOM, REACT-Router and REACT-Scripts.
 // Weatherbit.io API
 // WeatherUndergound.com for sample of site tools utilized.
+// GitHub.com repository
+// Heroku for pushing into production.
 // MVC executed for file structures - Models, Views and Controllers.
+
+// ** INSTALL INSTRUCTIONS **
+// Fork and clone project repo
+// Install any dependencies mentioned above
+// Confirm by checking package.json under "dependencies" under the "name" of the Appp at top of page.
+// open up VSCode - code . in terminal
+// also start browser using "npm run start" to get into the app.
+
+//  ** ADDITIONAL RESOURCES UTILIZED **
+// Google search engine, StackOverflow, Grepper, cssreference.io, developer.mozilla.org, w3schools.com
+
+// ** STRUGGLES **
+// As always one of the biggest struggles was page layouts using CSS.
+// Trying to utilize two different calls into the same page for "astronomy" on our forecast details page of sun rise/sets and moon crescents and rise/sets.  Sun JSON response was in current weather API and moon phases was in weather forecasts API.
+// 

@@ -98,7 +98,6 @@ class App extends Component {
     return tempRange;
   };
   windDir = (dir) => {
-    console.log(dir);
     let direction = "";
     switch (dir) {
       case "NNE":
