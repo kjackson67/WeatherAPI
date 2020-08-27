@@ -5,15 +5,11 @@
 } */
 .conditionUpdate {
   /* border: solid black; */
-  /* margin: 2px;
-  width: 1200px;
-  height: 275px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
   /* align-items: center; */
   background-color: transparent;
-  /* background-color: rgb(175, 175, 175, 0.7); */
 }
 .conditionsDataWrapper {
   /* border: 1px solid yellow; */
@@ -52,7 +48,7 @@
   line-height: 35px;
 }
 .currentTempWrapper {
-  border: 6px solid red;
+  border: 6px solid;
   padding: 5px;
   background-color: gb(175, 175, 175, 0.7);
   width: 260px;
@@ -83,6 +79,7 @@
   font-size: 19px;
   text-transform: uppercase;
   padding: 5px;
+  color: black;
 }
 .Astronomy {
   /* border: solid green; */
@@ -90,14 +87,7 @@
   width: 175px;
   height: 255px;
   display: flex;
-  flex-direction: column;
-  justify-content: top;
-  align-items: center;
-  line-height: 35px;
-  background-color: transparent;
-  padding: 9px;
- 
-  
+  font-size: 20px;
 }
 .t90plus {
   color: red;

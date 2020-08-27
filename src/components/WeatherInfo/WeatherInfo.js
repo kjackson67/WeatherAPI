@@ -23,7 +23,7 @@ function WeatherInfo(props) {
                 </h2>
                 <div className="conditionUpdate">
                   <div className="tempContainer">
-                    <div className="currentTempWrapper">
+                    <div className={`${props.tempColor(item.temp)} currentTempWrapper`}>
                       <div
                         className={`${props.tempColor(item.temp)} currentTemp`}
                       >
@@ -37,7 +37,6 @@ function WeatherInfo(props) {
                           °F
                         </div>
                       </div>
-
                       <div className="feelsLike">
                         <span>Feels Like</span> {Math.round(item.app_temp)}
                       </div>
@@ -79,13 +78,14 @@ function WeatherInfo(props) {
                     </div>
                   </div>
                   <div className="Astronomy">
-                    {/* <div>Sun */}
-                      <div>Sun Rise: {item.sunrise} </div>
-                      <div>Sun Set: {item.sunset} </div>
-                    {/* </div>   */}
+                    <div>Sun
+                      {/* </div> */}
+                      <div>Rise: {item.sunrise} </div>
+                      <div>Set: {item.sunset} </div>
+                    </div>  
                   </div>
                 </div>
-              </div>
+              // </div>
             )
           })}
         </div>
