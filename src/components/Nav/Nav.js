@@ -46,9 +46,9 @@ class Nav extends Component {
           placeholder="Country..."
         />
         <strong>
-          <Button className="getweather" variant="secondary">
+          <button className="getweather" variant="secondary">
             Get Weather
-          </Button>
+          </button>
         </strong>
       </form>
     );

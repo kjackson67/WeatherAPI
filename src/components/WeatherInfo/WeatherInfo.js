@@ -35,14 +35,12 @@ function WeatherInfo(props) {
                       >
                         {' '}
                         °F
-                      </div>
-                      </div>
-                      
+                      </div> 
+                     </div> 
                       <div className="feelsLike">
                         <span>Feels Like</span> {Math.round(item.app_temp)}
                       </div>
                       
-
                     </div>
                   </div>
                   <div className="conditionsDataWrapper">
@@ -53,9 +51,9 @@ function WeatherInfo(props) {
                         alt="icon"
                       />
                       <div>{item.weather.description}</div>
-                    </div>
+                    
                   </div>
-                  <div className="windConditionsWrapper">
+                  {/* <div className="windConditionsWrapper"> */}
                     <div className="compass">
                       <div className="direction">
                         <p>
@@ -64,11 +62,12 @@ function WeatherInfo(props) {
                           <span className="speed">{item.wind_spd} mph</span>
                         </p>
                       </div>
+                    </div>
                       <div
                         className={`arrow ${props.windDir(item.wind_cdir)}`}
-                      ></div>
-                    </div>
+                    ></div>
                   </div>
+                  {/* </div> */}
                   <div className="additionalConditionsContainer">
                     <div className="additionalConditionsWrapper">
                       <div>Pressure: {(item.pres / 33.864).toFixed(2)} in</div>
