@@ -53,12 +53,12 @@
 .homebutton {
   height: 30px;
   background: transparent;
-  box-shadow: 0px 0px 0px transparent;
-  text-shadow: 0px 0px 0px transparent;
+  /* box-shadow: 0px 0px 0px transparent; */
+  /* text-shadow: 0px 0px 0px transparent; */
   border-radius: 8px;
 }
 .homebutton .btn:hover {
-  background-color: black;
+  /* background-color: black; */
   color: white;
 }
 .t90plus {

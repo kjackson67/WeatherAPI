@@ -33,9 +33,10 @@
 // also start browser using "npm run start" to get into the app.
 
 //  ** ADDITIONAL RESOURCES UTILIZED **
-// Google search engine, StackOverflow, Grepper, cssreference.io, developer.mozilla.org, w3schools.com
+// Google, StackOverflow, Grepper, cssreference.io, developer.mozilla.org, w3schools.com
 
 // ** STRUGGLES **
 // As always one of the biggest struggles was page layouts using CSS.
 // Trying to utilize two different calls into the same page for "astronomy" on our forecast details page of sun rise/sets and moon crescents and rise/sets.  Sun JSON response was in current weather API and moon phases was in weather forecasts API.
-// 
+// Using many classnames that were similar to other folder .js classnames caused some mis-happs when running CSS in each file rather than having one centralized CSS file for all layout functions.
+// The App.js file was not utilized as much for the rendering of child files 

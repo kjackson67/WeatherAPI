@@ -34,18 +34,20 @@
   background-color: transparent;
   /* background-color: rgb(175, 175, 175, 0.7); */
   line-height: 30px;
+
 }
 .additionalConditionsContainer {
   /* border: solid blue; */
   display: flex;
   flex-direction: column;
-  padding: 5px;
+  padding: 25px;
   background-color: gb(175, 175, 175, 0.7);
   width: 200px;
   height: 260px;
   margin: 3px;
   justify-content: space-around;
   line-height: 35px;
+  text-align: left;
 }
 .currentTempWrapper {
   border: 6px solid;
@@ -84,7 +86,6 @@
   color: black;
 }
 .Astronomy {
-  /* border: solid green; */
   margin: 3px;
   width: 175px;
   height: 255px;
