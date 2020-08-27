@@ -82,13 +82,16 @@
   color: black;
 }
 .Astronomy {
-  /* border: solid green; */
   margin: 3px;
   width: 175px;
   height: 255px;
   display: flex;
-  font-size: 20px;
-  
+  font-size: 16px;
+  justify-content: top;
+  align-items: center;
+  line-height: 35px;
+  flex-direction: column;
+  padding: 8px;
 }
 .t90plus {
   color: red;

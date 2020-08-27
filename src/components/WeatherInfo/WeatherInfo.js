@@ -78,10 +78,9 @@ function WeatherInfo(props) {
                     </div>
                   </div>
                   <div className="Astronomy">
-                    <div>Sun
-                      {/* </div> */}
-                      <div>Rise: {item.sunrise} </div>
-                      <div>Set: {item.sunset} </div>
+                    <div>
+                      <div>Sun Rise: {item.sunrise} AM</div>
+                      <div>Sun Set: {item.sunset} PM</div>
                     </div>  
                   </div>
                 </div>
