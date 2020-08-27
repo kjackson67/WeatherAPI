@@ -38,7 +38,11 @@ function WeatherInfo(props) {
                 </h2>
                 <div className="conditionUpdate">
                   <div className="tempContainer">
-                    <div className="currentTempWrapper">
+                    <div
+                      className={`${props.tempColor(
+                        item.temp
+                      )} currentTempWrapper`}
+                    >
                       <div
                         className={`${props.tempColor(item.temp)} currentTemp`}
                       >
@@ -48,6 +52,7 @@ function WeatherInfo(props) {
                             item.temp
                           )} currentTempUnits`}
                         >
+                          {" "}
                           °F
                         </div>
                       </div>
@@ -74,7 +79,6 @@ function WeatherInfo(props) {
                             <span className="speed">{item.wind_spd} mph</span>
                           </p>
                         </div>
-
                         <div
                           className={`arrow ${props.windDir(item.wind_cdir)}`}
                         ></div>
@@ -101,6 +105,7 @@ function WeatherInfo(props) {
                     </div>
                   </div>
                 </div>
+                //{" "}
               </div>
             );
           })}
@@ -115,10 +120,5 @@ function WeatherInfo(props) {
   );
   // return <div className="weatherContainer">{weatherUpdate}</div>
 }
-// return (
-//   <div>
-// <Button onClick={()=>props.history.goBack()} className="homebutton" size="lg" variant="primary"> Home</Button>
-// </div>
-// );
 
 export default WeatherInfo;
