@@ -80,7 +80,7 @@ class Home extends Component {
           }}
           //   className="button"
           size="lg"
-          variant="outline-primary"
+          variant="outline-secondary"
         >
           Weather Details
           {/* <Link to="/weatherinfo">Weather Details</Link> */}
