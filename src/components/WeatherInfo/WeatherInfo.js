@@ -29,16 +29,6 @@ function WeatherInfo(props) {
                       >
                         {Math.round(item.temp)}
                         <div
-<<<<<<< HEAD
-                        className={`${props.tempColor(
-                          item.temp,
-                        )} currentTempUnits`}
-                      >
-                        {' '}
-                        °F
-                      </div> 
-                     </div> 
-=======
                           className={`${props.tempColor(
                             item.temp
                           )} currentTempUnits`}
@@ -48,7 +38,6 @@ function WeatherInfo(props) {
                         </div>
                       </div>
 
->>>>>>> 9106b3903504e293488ccd1e3e4131ffcd152d90
                       <div className="feelsLike">
                         <span>Feels Like</span> {Math.round(item.app_temp)}
                       </div>
