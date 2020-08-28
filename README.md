@@ -7,7 +7,7 @@ To create an application that can update a UI and make requests to the API for b
 The group used the approach of wireframe using Lucidchart utilizing a snapshot program to capture what we wanted our product to look like - both home page and details page
 ![Data Flow](/Planning/WeatherAPI_data_flow.png)
 ![Data Flow](/Planning/WeatherAPI_Website_blockframe_Home_page.png)
-![Data Flow](/Planning/WeatherAPI Website_blockframe_details_page.png)
+![Data Flow](/Planning/WeatherAPI_Website_blockframe_details_page.png)
 A data flow diagram was also created detailing our Home Page(App.js) flowing into the Weather informations page(weatherinfo.js and forecastdetail.js) as well tying a navigation bar to both home and details pages.
 
 # USER STORIES
@@ -42,7 +42,6 @@ A data flow diagram was also created detailing our Home Page(App.js) flowing int
 # ADDITIONAL RESOURCES UTILIZED
 
 - Google, StackOverflow, Grepper, cssreference.io, developer.mozilla.org, w3schools.com, Postman
-<div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 # STRUGGLES
 
